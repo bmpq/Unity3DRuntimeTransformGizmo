@@ -19,6 +19,8 @@ namespace RuntimeGizmos
 		public CenterType centerType = CenterType.All;
 		public ScaleType scaleType = ScaleType.FromPoint;
 
+		public bool input;
+
 		//These are the same as the unity editor hotkeys
 		public KeyCode SetMoveType = KeyCode.W;
 		public KeyCode SetRotateType = KeyCode.E;
@@ -152,9 +154,11 @@ namespace RuntimeGizmos
 
 		void Update()
 		{
-			HandleUndoRedo();
+			if (input)
+				HandleUndoRedo();
 
-			SetSpaceAndType();
+			if (input)
+				SetSpaceAndType();
 
 			if(manuallyHandleGizmo)
 			{
@@ -163,7 +167,8 @@ namespace RuntimeGizmos
 				SetNearAxis();
 			}
 			
-			GetTarget();
+			if (input)
+				GetTarget();
 
 			if(mainTargetRoot == null) return;
 			
