@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="lib\**" />
+    <EmbeddedResource Remove="lib\**" />
+    <None Remove="lib\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ExCSS.Unity">
+      <HintPath>lib\ExCSS.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Cecil">
+      <HintPath>lib\Unity.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Cecil.Mdb">
+      <HintPath>lib\Unity.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Cecil.Pdb">
+      <HintPath>lib\Unity.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Cecil.Rocks">
+      <HintPath>lib\Unity.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CecilTools">
+      <HintPath>lib\Unity.CecilTools.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CompilationPipeline.Common">
+      <HintPath>lib\Unity.CompilationPipeline.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Legacy.NRefactory">
+      <HintPath>lib\Unity.Legacy.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.SerializationLogic">
+      <HintPath>lib\Unity.SerializationLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>lib\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>lib\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>lib\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

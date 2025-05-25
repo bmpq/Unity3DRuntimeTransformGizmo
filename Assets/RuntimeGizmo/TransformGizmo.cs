@@ -126,7 +126,6 @@ namespace RuntimeGizmos
 		Coroutine forceUpdatePivotCoroutine;
 
 		static Material lineMaterial;
-		static Material outlineMaterial;
 
 		void Awake()
 		{
@@ -726,12 +725,6 @@ namespace RuntimeGizmos
 						materialsBuffer.Clear();
 						materialsBuffer.AddRange(render.sharedMaterials);
 
-						if(!materialsBuffer.Contains(outlineMaterial))
-						{
-							materialsBuffer.Add(outlineMaterial);
-							render.materials = materialsBuffer.ToArray();
-						}
-
 						highlightedRenderers.Add(render);
 					}
 				}
@@ -778,12 +771,6 @@ namespace RuntimeGizmos
 				{
 					materialsBuffer.Clear();
 					materialsBuffer.AddRange(render.sharedMaterials);
-
-					if(materialsBuffer.Contains(outlineMaterial))
-					{
-						materialsBuffer.Remove(outlineMaterial);
-						render.materials = materialsBuffer.ToArray();
-					}
 				}
 
 				highlightedRenderers.Remove(render);
@@ -1417,8 +1404,7 @@ namespace RuntimeGizmos
 		{
 			if(lineMaterial == null)
 			{
-				lineMaterial = new Material(Shader.Find("Custom/Lines"));
-				outlineMaterial = new Material(Shader.Find("Custom/Outline"));
+				lineMaterial = new Material(Shader.Find("Hidden/Internal-Colored"));
 			}
 		}
 	}
