@@ -1405,7 +1405,11 @@ namespace RuntimeGizmos
 			if(lineMaterial == null)
 			{
 				lineMaterial = new Material(Shader.Find("Hidden/Internal-Colored"));
-			}
+
+                lineMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Overlay;
+                lineMaterial.SetInt("_ZTest", (int)UnityEngine.Rendering.CompareFunction.Always);
+                lineMaterial.SetInt("_ZWrite", 0);
+            }
 		}
 	}
 }
